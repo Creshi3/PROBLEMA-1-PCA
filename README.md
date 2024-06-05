@@ -35,6 +35,8 @@ Si se completa la iteración sobre todo el arreglo y no se encuentra ninguna par
 
 #4. Impresión del resultado:
 
+        Si existen dos números en el arreglo que suman 5.
+
 
 
 
