@@ -1,0 +1,34 @@
+#include <iostream>
+#include <unordered_set>
+#include <vector>
+
+bool existeSumaK(std::vector<int>& array, int k) {
+    std::unordered_set<int> complements;
+
+    for (int num : array) {
+        int complement = k - num;
+        if (complements.find(complement) != complements.end()) {
+            return true;  // Si encontramos el complemento, entonces hay una pareja que suma k
+        }
+        complements.insert(num);
+    }
+
+    return false;  // Si no encontramos ninguna pareja que sume k
+}
+
+int main() {
+    std::vector<int> array = {1, 5, 2, 3};
+    int k = 5;
+
+    if (existeSumaK(array, k)) {
+        std::cout << "Sí existen dos números en el arreglo que suman " << k << ".\n";
+    } else {
+        std::cout << "No existen dos números en el arreglo que sumen " << k << ".\n";
+    }
+
+    return 0;
+}
+
+
+SALIDA:
+Si existen dos números en el arreglo que suman 5.
