@@ -26,6 +26,13 @@ for (int num : array) {
         complements.insert(num);
     }
 
+    for (int num : array) {
+        int complement = k - num;
+        if (complements.find(complement) != complements.end()) {
+            return true;  // Si encontramos el complemento, entonces hay una pareja que suma k
+        }
+        complements.insert(num);
+    }
     return false;  // Si no encontramos ninguna pareja que sume k
 
 #4. Impresión del resultado:
